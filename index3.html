@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Élégance Couture | Haute Fashion House</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .collection-card {
+            transition: all 0.3s ease;
+        }
+        
+        .collection-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .gold-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+        }
+        
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #D4AF37;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 4px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+        }
+        
+        .lookbook-item {
+            transition: all 0.5s ease;
+        }
+        
+        .lookbook-item:hover {
+            transform: scale(1.05);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-filter backdrop-blur-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-24 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-3xl playfair font-bold text-gray-900 tracking-wider">ÉLÉGANCE</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#" class="nav-link px-3 py-2 text-sm font-medium text-gray-900 hover:text-gold-800">COLLECTIONS</a>
+                        <a href="#" class="nav-link px-3 py-2 text-sm font-medium text-gray-900 hover:text-gold-800">COUTURE</a>
+                        <a href="#" class="nav-link px-3 py-2 text-sm font-medium text-gray-900 hover:text-gold-800">READY-TO-WEAR</a>
+                        <a href="#" class="nav-link px-3 py-2 text-sm font-medium text-gray-900 hover:text-gold-800">ACCESSORIES</a>
+                        <a href="#" class="nav-link px-3 py-2 text-sm font-medium text-gray-900 hover:text-gold-800">WORLD OF ÉLÉGANCE</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-900 hover:text-yellow-700">
+                        <i class="fas fa-search text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-900 hover:text-yellow-700">
+                        <i class="far fa-user text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-900 hover:text-yellow-700">
+                        <i class="fas fa-shopping-bag text-lg"></i>
+                    </a>
+                    <button class="md:hidden text-gray-900">
+                        <i class="fas fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section min-h-screen flex items-center justify-center text-center text-white pt-24">
+        <div class="px-6 max-w-4xl mx-auto">
+            <h1 class="playfair text-5xl md:text-7xl font-bold mb-6 tracking-wide">SUMMER COUTURE 2023</h1>
+            <div class="gold-line w-48 mx-auto my-6"></div>
+            <p class="text-lg md:text-xl mb-10 font-light tracking-wider">Experience the epitome of luxury with our latest haute couture collection, meticulously crafted for the modern aristocrat.</p>
+            <a href="#" class="inline-block border-2 border-white px-8 py-3 uppercase tracking-wider font-medium hover:bg-white hover:text-black transition duration-300">Discover</a>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="playfair text-4xl font-bold mb-4">OUR COLLECTIONS</h2>
+            <div class="gold-line w-32 mx-auto"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="collection-card relative group overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Spring Collection" class="w-full h-96 object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                    <div class="text-center text-white px-4">
+                        <h3 class="playfair text-2xl font-bold mb-2">SPRING FLORAL</h3>
+                        <p class="mb-4">Delicate fabrics meet bold silhouettes</p>
+                        <a href="#" class="inline-block border border-white px-6 py-2 text-sm uppercase tracking-wider hover:bg-white hover:text-black transition duration-300">View Collection</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collection-card relative group overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Evening Wear" class="w-full h-96 object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                    <div class="text-center text-white px-4">
+                        <h3 class="playfair text-2xl font-bold mb-2">EVENING GLAMOUR</h3>
+                        <p class="mb-4">Dazzling designs for your most memorable nights</p>
+                        <a href="#" class="inline-block border border-white px-6 py-2 text-sm uppercase tracking-wider hover:bg-white hover:text-black transition duration-300">View Collection</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collection-card relative group overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1554412933-514a83d2f3c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=672&q=80" alt="Bridal Collection" class="w-full h-96 object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                    <div class="text-center text-white px-4">
+                        <h3 class="playfair text-2xl font-bold mb-2">BRIDAL COUTURE</h3>
+                        <p class="mb-4">Timeless elegance for your special day</p>
+                        <a href="#" class="inline-block border border-white px-6 py-2 text-sm uppercase tracking-wider hover:bg-white hover:text-black transition duration-300">View Collection</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Couture Experience Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-12 lg:mb-0">
+                    <img src="https://images.unsplash.com/photo-1595425964073-9b8436ab9a70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Couture Experience" class="w-full h-auto shadow-xl">
+                </div>
+                <div>
+                    <h2 class="playfair text-4xl font-bold mb-6">THE COUTURE EXPERIENCE</h2>
+                    <div class="gold-line w-32 mb-8"></div>
+                    <p class="text-gray-600 mb-6 leading-relaxed">At Élégance, we believe true luxury lies in the details. Each couture piece is meticulously handcrafted by our master artisans, with some garments requiring up to 800 hours of work.</p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">Our private atelier in Paris welcomes discerning clients for personalized fittings, where every stitch and silhouette is tailored to perfection.</p>
+                    <a href="#" class="inline-block border-2 border-black px-8 py-3 uppercase tracking-wider font-medium hover:bg-black hover:text-white transition duration-300">Book a Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lookbook Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="playfair text-4xl font-bold mb-4">FALL LOOKBOOK</h2>
+            <div class="gold-line w-32 mx-auto"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="lookbook-item overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1551232864-3f4415269679?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Look 1" class="w-full h-full object-cover">
+            </div>
+            <div class="lookbook-item overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1551232864-3f4415269679?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Look 2" class="w-full h-full object-cover">
+            </div>
+            <div class="lookbook-item overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1551232864-3f4415269679?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Look 3" class="w-full h-full object-cover">
+            </div>
+            <div class="lookbook-item overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1551232864-3f4415269679?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Look 4" class="w-full h-full object-cover">
+            </div>
+        </div>
+        
+        <div class="text-center mt-12">
+            <a href="#" class="inline-block border-2 border-black px-8 py-3 uppercase tracking-wider font-medium hover:bg-black hover:text-white transition duration-300">View Full Lookbook</a>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-20 bg-black text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="playfair text-4xl font-bold mb-6">JOIN OUR WORLD</h2>
+            <div class="gold-line w-32 mx-auto mb-8"></div>
+            <p class="text-gray-300 mb-8 max-w-2xl mx-auto">Subscribe to receive exclusive invitations, private viewings, and insights into the world of Élégance Couture.</p>
+            
+            <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 bg-transparent border border-gray-600 focus:border-yellow-600 focus:outline-none text-white placeholder-gray-400">
+                <button type="submit" class="px-6 py-3 bg-yellow-700 text-white font-medium uppercase tracking-wider hover:bg-yellow-600 transition duration-300">Subscribe</button>
+            </form>
+            
+            <div class="flex justify-center space-x-6 mt-12">
+                <a href="#" class="text-gray-300 hover:text-yellow-600"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="text-gray-300 hover:text-yellow-600"><i class="fab fa-facebook-f text-xl"></i></a>
+                <a href="#" class="text-gray-300 hover:text-yellow-600"><i class="fab fa-pinterest-p text-xl"></i></a>
+                <a href="#" class="text-gray-300 hover:text-yellow-600"><i class="fab fa-twitter text-xl"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="playfair text-lg font-bold mb-4">ÉLÉGANCE</h3>
+                    <p class="text-gray-600 text-sm">Founded in 1985, Élégance Couture represents the pinnacle of French craftsmanship and timeless design.</p>
+                </div>
+                <div>
+                    <h3 class="playfair text-lg font-bold mb-4">COLLECTIONS</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:text-black text-sm">Haute Couture</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-black text-sm">Ready-to-Wear</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-black text-sm">Bridal</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-black text-sm">Accessories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="playfair text-lg font-bold mb-4">SERVICES</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:text-black text-sm">Private Appointments</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-black text-sm">Bespoke Tailoring</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-black text-sm">Alterations</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-black text-sm">Worldwide Delivery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="playfair text-lg font-bold mb-4">CONTACT</h3>
+                    <address class="text-gray-600 text-sm not-italic">
+                        18 Avenue Montaigne<br>
+                        75008 Paris, France<br>
+                        +33 1 53 67 08 08<br>
+                        contact@elegance-couture.com
+                    </address>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2023 Élégance Couture. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-black text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-black text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-500 hover:text-black text-sm">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for mobile menu toggle (would be expanded in a real implementation)
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.md\\:hidden');
+            const navLinks = document.querySelector('.hidden.md\\:block');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                navLinks.classList.toggle('hidden');
+                navLinks.classList.toggle('block');
+                navLinks.classList.toggle('absolute');
+                navLinks.classList.toggle('top-24');
+                navLinks.classList.toggle('left-0');
+                navLinks.classList.toggle('right-0');
+                navLinks.classList.toggle('bg-white');
+                navLinks.classList.toggle('p-6');
+                navLinks.classList.toggle('shadow-lg');
+            });
+            
+            // Parallax effect for hero section
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.pageYOffset;
+                const heroSection = document.querySelector('.hero-section');
+                heroSection.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+            });
+        });
+    </script>
+</body>
+</html>

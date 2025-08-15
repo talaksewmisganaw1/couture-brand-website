@@ -1,0 +1,38 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: solid 1px red;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+.font-display {
+    font-family: 'Playfair Display', serif;
+}
+.hero-gradient {
+    /* background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%); */
+    background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(72,61,139,0.6) 50%, rgba(255,105,180,0.4) 100%);
+}
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.glass-effect {
+    backdrop-filter: blur(20px);
+    /* background: rgba(255, 255, 255, 0.1); */
+    background: linear-gradient(to right, black, rgba(255, 255, 255, 0.1))
+}
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

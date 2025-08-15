@@ -3,48 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAISON ELÉGANCE - International Couture</title>
+    <title>Fert Design - International Couture</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .font-display {
-            font-family: 'Playfair Display', serif;
-        }
-        .hero-gradient {
-            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
-        }
-        .text-shadow {
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        .glass-effect {
-            backdrop-filter: blur(20px);
-            background: rgba(255, 255, 255, 0.1);
-        }
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .hover-lift:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-stone-50 text-gray-900">
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 glass-effect border-b border-white/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <div class="font-display text-2xl font-bold text-white">MAISON ELÉGANCE</div>
+                <div class="font-display text-2xl font-bold text-white h-full"><img src="./images/logo.jpg" alt="logo" class="h-full" /></div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="text-white hover:text-stone-300 transition">Home</a>
                     <a href="#collections" class="text-white hover:text-stone-300 transition">Collections</a>
@@ -70,8 +40,11 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative h-screen flex items-center justify-center">
-        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1539109136881-3be6e52ee840?ixlib=rb-4.0.3')] bg-cover bg-center parallax"></div>
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- <div class="absolute inset-0 bg-[url('./videos/fert1.mp4')] bg-cover bg-center parallax"></div> -->
+        <video class="absolute inset-0 object-cover object-center parallax md:w-full h-full" muted autoplay loop>
+            <source src="./videos/fert1.mp4" type="video/mp4" id="video-source" />
+        </video>
         <div class="absolute inset-0 hero-gradient"></div>
         <div class="relative z-10 text-center text-white px-4">
             <h1 class="font-display text-5xl md:text-7xl font-light mb-4 text-shadow">
@@ -96,42 +69,42 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="group hover-lift">
                     <div class="overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3" 
-                             alt="Collection 1" 
-                             class="w-full h-96 object-cover transform group-hover:scale-110 transition duration-500">
-                    </div>
-                    <div class="mt-6">
-                        <h3 class="font-display text-2xl mb-2">Renaissance Dreams</h3>
-                        <p class="text-gray-600 mb-4">Spring/Summer 2024</p>
-                        <button class="border border-gray-900 px-6 py-2 hover:bg-gray-900 hover:text-white transition">
-                            VIEW COLLECTION
-                        </button>
-                    </div>
-                </div>
-                <div class="group hover-lift">
-                    <div class="overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c?ixlib=rb-4.0.3" 
+                        <img src="./images/woman.jpg" 
                              alt="Collection 2" 
                              class="w-full h-96 object-cover transform group-hover:scale-110 transition duration-500">
                     </div>
                     <div class="mt-6">
-                        <h3 class="font-display text-2xl mb-2">Midnight Bloom</h3>
-                        <p class="text-gray-600 mb-4">Fall/Winter 2024</p>
-                        <button class="border border-gray-900 px-6 py-2 hover:bg-gray-900 hover:text-white transition">
+                        <h3 class="font-display text-2xl mb-2 group-hover:ml-5 transition-all duration-500 ease-in-out">Woman</h3>
+                        <!-- <p class="text-gray-600 mb-4">Fall/Winter 2024</p> -->
+                        <button class="border border-gray-900 px-6 py-2 hover:bg-gray-900 hover:text-white group-hover:ml-5 transition-all duration-500 ease-in-out group-hover:mb-3">
                             VIEW COLLECTION
                         </button>
                     </div>
                 </div>
                 <div class="group hover-lift">
                     <div class="overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3" 
-                             alt="Collection 3" 
+                        <img src="./images/men2.jpg" 
+                             alt="Collection 1" 
                              class="w-full h-96 object-cover transform group-hover:scale-110 transition duration-500">
                     </div>
                     <div class="mt-6">
-                        <h3 class="font-display text-2xl mb-2">Ethereal Grace</h3>
-                        <p class="text-gray-600 mb-4">Cruise 2024</p>
-                        <button class="border border-gray-900 px-6 py-2 hover:bg-gray-900 hover:text-white transition">
+                        <h3 class="font-display text-2xl mb-2 group-hover:ml-5 transition-all duration-500 ease-in-out">Men</h3>
+                        <!-- <p class="text-gray-600 mb-4">Spring/Summer 2024</p> -->
+                        <button class="border border-gray-900 px-6 py-2 hover:bg-gray-900 hover:text-white group-hover:ml-5 transition-all duration-500 ease-in-out group-hover:mb-3">
+                            VIEW COLLECTION
+                        </button>
+                    </div>
+                </div>
+                <div class="group hover-lift">
+                    <div class="overflow-hidden">
+                        <img src="./images/Couple & Family.jpg" 
+                             alt="Collection 3" 
+                             class="w-full h-96 object-cover transform group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="mt-6 group">
+                        <h3 class="font-display text-2xl mb-2 group-hover:ml-5 transition-all duration-500 ease-in-out">Couple & family</h3>
+                        <!-- <p class="text-gray-600 mb-4">Cruise 2024</p> -->
+                        <button class="border border-gray-900 px-6 py-2 hover:bg-gray-900 hover:text-white group-hover:ml-5 transition-all duration-500 ease-in-out group-hover:mb-3">
                             VIEW COLLECTION
                         </button>
                     </div>
@@ -249,7 +222,7 @@
     <footer class="bg-black text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="font-display text-2xl mb-4 md:mb-0">MAISON ELÉGANCE</div>
+                <div class="font-display text-2xl mb-4 md:mb-0">Fert Design</div>
                 <div class="flex space-x-6">
                     <a href="#" class="text-stone-400 hover:text-white transition">
                         <i class="fab fa-instagram text-xl"></i>
@@ -266,45 +239,11 @@
                 </div>
             </div>
             <div class="text-center text-stone-400 mt-8 text-sm">
-                &copy; 2024 MAISON ELÉGANCE. All rights reserved.
+                &copy; <span id="year"></span> Fert Design. All rights reserved.
             </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close mobile menu if open
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        });
-
-        // Navbar background on scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.classList.add('bg-black/90');
-            } else {
-                nav.classList.remove('bg-black/90');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
