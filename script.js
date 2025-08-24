@@ -36,14 +36,15 @@ window.addEventListener('scroll', () => {
 });
 
 //changing the video souce of a mobile screen
-const videoSource = document.getElementById("video-source");
 function setVideoSrc() {
+    const videoSource = document.getElementById("video-source");
     if (window.innerWidth <= 768) {
-        videoSource.src = "./videos/mobile video.mp4";
+        videoSource.src = "./videos/mobile _video.mp4";
     } else {
         videoSource.src = "./videos/fert1.mp4";
     }
+    videoSource.parentElement.load();
 }
 
+setVideoSrc()
 window.addEventListener("resize", setVideoSrc);
-window.addEventListener("load", setVideoSrc);
