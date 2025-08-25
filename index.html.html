@@ -37,6 +37,9 @@ body {
 .hover-lift {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.hover-lift-small {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
 .hover-lift:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
@@ -272,8 +275,6 @@ body {
                     <a href="#collections" class="text-white hover:text-stone-300 transition">Collections</a>
                     <a href="#about" class="text-white hover:text-stone-300 transition">About</a>
                     <a href="#shop" class="text-white hover:text-stone-300 transition">Shop</a>
-                    <a href="#atelier" class="text-white hover:text-stone-300 transition">Atelier</a>
-                    <a href="#global" class="text-white hover:text-stone-300 transition">Global</a>
                     <a href="#contact" class="text-white hover:text-stone-300 transition">Contact</a>
                 </div>
                 <button id="menu-toggle" class="md:hidden text-white">
@@ -288,8 +289,6 @@ body {
                 <a href="#collections" class="block px-3 py-2 text-white hover:bg-white/10">Collections</a>
                 <a href="#about" class="block px-3 py-2 text-white hover:bg-white/10">About</a>
                 <a href="#shop" class="block px-3 py-2 text-white hover:bg-white/10">Shop</a>
-                <a href="#atelier" class="block px-3 py-2 text-white hover:bg-white/10">Atelier</a>
-                <a href="#global" class="block px-3 py-2 text-white hover:bg-white/10">Global</a>
                 <a href="#contact" class="block px-3 py-2 text-white hover:bg-white/10">Contact</a>
             </div>
         </div>
@@ -298,7 +297,7 @@ body {
     <!-- Hero Section -->
     <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
         <!-- <div class="absolute inset-0 bg-[url('./videos/fert1.mp4')] bg-cover bg-center parallax"></div> -->
-        <video class="absolute inset-0 object-cover object-center parallax md:w-full h-full" muted autoplay loop>
+        <video class="absolute inset-0 object-cover object-center parallax md:w-full w-full h-full" muted autoplay loop>
             <source src="./videos/fert1.mp4" type="video/mp4" id="video-source" />
         </video>
         <div class="absolute inset-0 hero-gradient"></div>
@@ -323,44 +322,44 @@ body {
                 <p class="text-gray-600 max-w-2xl mx-auto">Discover our latest haute couture collections, crafted with precision and passion</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="group hover-lift">
+                <div class="group hover-lift max-sm:shadow-xl">
                     <div class="overflow-hidden">
                         <img src="./images/woman.jpg"
                               alt="Collection 2"
                               class="w-full h-96 object-cover transform group-hover:scale-110 transition duration-500">
                     </div>
                     <div class="mt-6">
-                        <h3 class="font-display text-2xl mb-2 group-hover:ml-5 transition-all duration-500 ease-in-out">Woman</h3>
+                        <h3 class="font-display text-2xl mb-2 group-hover:ml-5 max-sm:ml-5 transition-all duration-500 ease-in-out">Woman</h3>
                         <!-- <p class="text-gray-600 mb-4">Fall/Winter 2024</p> -->
-                        <button onclick="openCollection('woman')" class="border border-gray-900 px-6 py-2 hover:bg-gray-900 hover:text-white group-hover:ml-5 transition-all duration-500 ease-in-out group-hover:mb-3">
+                        <button onclick="openCollection('woman')" class="border border-gray-900 px-6 py-2 hover:bg-gray-900 hover:text-white group-hover:ml-5 transition-all duration-500 ease-in-out group-hover:mb-3 max-sm:bg-gray-900 max-sm:ml-5 max-sm:text-white max-sm:mb-3 ">
                             VIEW COLLECTION
                         </button>
                     </div>
                 </div>
-                <div class="group hover-lift">
+                <div class="group hover-lift max-sm:shadow-xl">
                     <div class="overflow-hidden">
                         <img src="./images/men2.jpg"
                               alt="Collection 1"
                               class="w-full h-96 object-cover transform group-hover:scale-110 transition duration-500">
                     </div>
                     <div class="mt-6">
-                        <h3 class="font-display text-2xl mb-2 group-hover:ml-5 transition-all duration-500 ease-in-out">Men</h3>
+                        <h3 class="font-display text-2xl mb-2 group-hover:ml-5 transition-all duration-500 ease-in-out max-sm:ml-5">Men</h3>
                         <!-- <p class="text-gray-600 mb-4">Spring/Summer 2024</p> -->
-                        <button onclick="openCollection('men')" class="border border-gray-900 px-6 py-2 hover:bg-gray-900 hover:text-white group-hover:ml-5 transition-all duration-500 ease-in-out group-hover:mb-3">
+                        <button onclick="openCollection('men')" class="border border-gray-900 px-6 py-2 hover:bg-gray-900 hover:text-white group-hover:ml-5 transition-all duration-500 ease-in-out group-hover:mb-3 max-sm:bg-gray-900 max-sm:ml-5 max-sm:text-white max-sm:mb-3 ">
                             VIEW COLLECTION
                         </button>
                     </div>
                 </div>
-                <div class="group hover-lift">
+                <div class="group hover-lift max-sm:shadow-xl">
                     <div class="overflow-hidden">
                         <img src="./images/Couple & Family.jpg"
                               alt="Collection 3"
                               class="w-full h-96 object-cover transform group-hover:scale-110 transition duration-500">
                     </div>
                     <div class="mt-6 group">
-                        <h3 class="font-display text-2xl mb-2 group-hover:ml-5 transition-all duration-500 ease-in-out">Couple & family</h3>
+                        <h3 class="font-display text-2xl mb-2 group-hover:ml-5 transition-all duration-500 ease-in-out max-sm:ml-5">Couple & family</h3>
                         <!-- <p class="text-gray-600 mb-4">Cruise 2024</p> -->
-                        <button onclick="openCollection('couple')" class="border border-gray-900 px-6 py-2 hover:bg-gray-900 hover:text-white group-hover:ml-5 transition-all duration-500 ease-in-out group-hover:mb-3">
+                        <button onclick="openCollection('couple')" class="border border-gray-900 px-6 py-2 hover:bg-gray-900 hover:text-white group-hover:ml-5 transition-all duration-500 ease-in-out group-hover:mb-3 max-sm:bg-gray-900 max-sm:ml-5 max-sm:text-white max-sm:mb-3 ">
                             VIEW COLLECTION
                         </button>
                     </div>
@@ -373,12 +372,8 @@ body {
     <section id="about" class="py-20 bg-stone-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="order-2 md:order-1 lg:h-[80vh]">
-                    <img src="./images/profile.jpg"
-                          alt="About Fert Design"
-                          class="w-full h-auto lg:h-[100%] object-contain rounded-lg shadow-lg">
-                </div>
-                <div class="order-1 lg:order-2">
+                
+                <div class="order-1 lg:order-1">
                     <h2 class="font-display text-4xl md:text-5xl font-light mb-6">Our Story</h2>
                     <p class="text-gray-600 mb-6 leading-relaxed">
                         Founded in 2010, Fert Design has grown from a small boutique in Addis Ababa to an internationally recognized couture house. Our founder's vision was to blend traditional Ethiopian craftsmanship with contemporary design aesthetics.
@@ -389,6 +384,38 @@ body {
                     <button class="bg-gray-900 text-white px-8 py-3 hover:bg-gray-700 transition">
                         LEARN MORE ABOUT US
                     </button>
+                </div>
+                <div class="order-2 md:order-2 lg:h-[80vh]">
+                    <img src="./images/profile.jpg"
+                          alt="About Fert Design"
+                          class="w-full h-auto lg:h-[100%] object-contain rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+        <div id="atelier" class="py-20 bg-stone-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3"
+                            alt="Atelier 1"
+                            class="w-full h-64 object-cover">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3"
+                            alt="Atelier 2"
+                            class="w-full h-64 object-cover">
+                    </div>
+                    <div>
+                        <h2 class="font-display text-4xl md:text-5xl font-light mb-6">Our Atelier</h2>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Nestled in the heart of Addis Ababa, our atelier is where dreams become reality. Each piece is meticulously crafted by master artisans who have inherited centuries-old techniques, combined with modern innovation.
+                        </p>
+                        <p class="text-gray-600 mb-8 leading-relaxed">
+                            From the initial sketch to the final stitch, every creation is a testament to our commitment to excellence and the art of haute couture.
+                        </p>
+                        <button class="bg-gray-900 text-white px-8 py-3 hover:bg-gray-700 transition">
+                            DISCOVER OUR PROCESS
+                        </button>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -445,90 +472,60 @@ body {
         </div>
     </section>
 
-    <!-- Atelier Section -->
-    <section id="atelier" class="py-20 bg-stone-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="font-display text-4xl md:text-5xl font-light mb-6">Our Atelier</h2>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Nestled in the heart of Addis Ababa, our atelier is where dreams become reality. Each piece is meticulously crafted by master artisans who have inherited centuries-old techniques, combined with modern innovation.
-                    </p>
-                    <p class="text-gray-600 mb-8 leading-relaxed">
-                        From the initial sketch to the final stitch, every creation is a testament to our commitment to excellence and the art of haute couture.
-                    </p>
-                    <button class="bg-gray-900 text-white px-8 py-3 hover:bg-gray-700 transition">
-                        DISCOVER OUR PROCESS
-                    </button>
-                </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3"
-                          alt="Atelier 1"
-                          class="w-full h-64 object-cover">
-                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3"
-                          alt="Atelier 2"
-                          class="w-full h-64 object-cover">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Global Presence -->
-    <section id="global" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="font-display text-4xl md:text-5xl font-light mb-4">Our Shops</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Explore our exclusive boutiques across Addis Ababa. Step inside to experience personalized service and discover timeless pieces designed to inspire your style.</p>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-1 gap-12">
-                <!-- Shop Descriptions Container -->
-                <div class="space-y-8">
-                    <div class="text-center">
-                        <div class="text-4xl mb-4">🏛️</div>
-                        <h3 class="font-display text-xl mb-2">Bole Branch</h3>
-                        <p class="text-gray-600">Bole Medhanealem</p>
-                        <p class="text-gray-500 mt-2">Open: Mon-Sat 9AM-7PM</p>
-                    </div>
-                    
-                    <div class="text-center">
-                        <div class="text-4xl mb-4">🛍️</div>
-                        <h3 class="font-display text-xl mb-2">Kazanches Branch</h3>
-                        <p class="text-gray-600">Kazanches Plaza</p>
-                        <p class="text-gray-500 mt-2">Open: Mon-Sat 9AM-7PM</p>
-                    </div>
-                    
-                    <div class="text-center">
-                        <div class="text-4xl mb-4">🏢</div>
-                        <h3 class="font-display text-xl mb-2">4 Kilo Branch</h3>
-                        <p class="text-gray-600">4 Kilo Commercial Center</p>
-                        <p class="text-gray-500 mt-2">Open: Mon-Sat 9AM-7PM</p>
-                    </div>
-                </div>
-                
-                <!-- Maps Container -->
-                <div class="space-y-8">
-                    <div class="h-96 w-full">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.755036003319!2d38.76386031525978!3d8.99798099353838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85a5c1e4b6d5%3A0x3a3b811d6a9e5b5!2sBole%20Medhanealem%2C%20Addis%20Ababa!5e0!3m2!1sen!2set!4v1620000000000!5m2!1sen!2set" 
-                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="h-64 w-full">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.755036003319!2d38.76386031525978!3d8.99798099353838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85a5c1e4b6d5%3A0x3a3b811d6a9e5b5!2sKazanches%20Plaza%2C%20Addis%20Ababa!5e0!3m2!1sen!2set!4v1620000000000!5m2!1sen!2set" 
-                                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                        </div>
-                        <div class="h-64 w-full">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.755036003319!2d38.76386031525978!3d8.99798099353838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85a5c1e4b6d5%3A0x3a3b811d6a9e5b5!2s4%20Kilo%20Commercial%20Center%2C%20Addis%20Ababa!5e0!3m2!1sen!2set!4v1620000000000!5m2!1sen!2set" 
-                                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-stone-900 text-white">
+        <div id="locations" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="font-display text-4xl md:text-5xl font-light mb-4">Our Shops</h2>
+                    <p class="text-gray-300 max-w-2xl mx-auto">Explore our exclusive boutiques across Addis Ababa. Step inside to experience personalized service and discover timeless pieces designed to inspire your style.</p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-1 gap-12">
+                    <!-- Shop Descriptions Container -->
+                    <div class="max-sm:space-y-8 grid grid-cols-1 lg:grid-cols-3">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">🏛️</div>
+                            <h3 class="font-display text-xl mb-2">22 Mazoriya</h3>
+                            <p class="text-gray-300">Bole Medhanealem</p>
+                            <p class="text-gray-300 mt-2">Open: Mon-Sat 9AM-7PM</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">🛍️</div>
+                            <h3 class="font-display text-xl mb-2">CMC Branch</h3>
+                            <p class="text-gray-300">Kazanches Plaza</p>
+                            <p class="text-gray-300 mt-2">Open: Mon-Sat 9AM-7PM</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">🏢</div>
+                            <h3 class="font-display text-xl mb-2">22 Mazoriya II</h3>
+                            <p class="text-gray-300">4 Kilo Commercial Center</p>
+                            <p class="text-gray-300 mt-2">Open: Mon-Sat 9AM-7PM</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Maps Container -->
+                    <div class="space-y-1">
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+                            <div class="h-64 w-full">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.755036003319!2d38.76386031525978!3d8.99798099353838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85a5c1e4b6d5%3A0x3a3b811d6a9e5b5!2sBole%20Medhanealem%2C%20Addis%20Ababa!5e0!3m2!1sen!2set!4v1620000000000!5m2!1sen!2set" 
+                                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="h-64 w-full">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.755036003319!2d38.76386031525978!3d8.99798099353838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85a5c1e4b6d5%3A0x3a3b811d6a9e5b5!2sKazanches%20Plaza%2C%20Addis%20Ababa!5e0!3m2!1sen!2set!4v1620000000000!5m2!1sen!2set" 
+                                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="h-64 w-full">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.755036003319!2d38.76386031525978!3d8.99798099353838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85a5c1e4b6d5%3A0x3a3b811d6a9e5b5!2s4%20Kilo%20Commercial%20Center%2C%20Addis%20Ababa!5e0!3m2!1sen!2set!4v1620000000000!5m2!1sen!2set" 
+                                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div>
@@ -811,6 +808,47 @@ body {
                 document.body.style.overflow = 'auto';
             }, 300);
         });
+
+        
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            // Close mobile menu if open
+            mobileMenu.classList.add('hidden');
+        }
+    });
+});
+
+// Navbar background on scroll
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 100) {
+        nav.classList.add('bg-black/90');
+    } else {
+        nav.classList.remove('bg-black/90');
+    }
+});
+
+//changing the video souce of a mobile screen
+function setVideoSrc() {
+    const videoSource = document.getElementById("video-source");
+    if (window.innerWidth <= 768) {
+        videoSource.src = "./videos/mobile _video.mp4";
+    } else {
+        videoSource.src = "./videos/fert1.mp4";
+    }
+    videoSource.parentElement.load();
+}
+
+setVideoSrc()
+window.addEventListener("resize", setVideoSrc);
     </script>
 </body>
 </html>
