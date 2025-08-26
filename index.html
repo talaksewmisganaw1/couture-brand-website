@@ -7,269 +7,24 @@
     <link rel="icon" href="./images/logo.jpg" type="image/jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-      * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    border: solid 1px red;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-}
-.font-display {
-    font-family: 'Playfair Display', serif;
-}
-.hero-gradient {
-    /* background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%); */
-    background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(72,61,139,0.6) 50%, rgba(255,105,180,0.4) 100%);
-}
-.text-shadow {
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-.glass-effect {
-    backdrop-filter: blur(20px);
-    /* background: rgba(255, 255, 255, 0.1); */
-    background: linear-gradient(to right, black, rgba(255, 255, 255, 0.1))
-}
-.hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.hover-lift-small {
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
-.hover-lift:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
-.parallax {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-/* Collection Page Styles */
-.fullscreen-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.9);
-    z-index: 2000;
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.fullscreen-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 90%;
-    max-height: 90%;
-}
-
-.close-fullscreen {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.5);
-    border: none;
-    color: white;
-    font-size: 24px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s ease;
-}
-
-.nav-button:hover {
-    background: rgba(0,0,0,0.8);
-}
-
-.left-8 {
-    left: 20px;
-}
-
-.right-8 {
-    right: 20px;
-}
-
-.collection-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.9);
-    z-index: 1000;
-    overflow-y: auto;
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.collection-container {
-    max-width: 1800px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    color: white;
-}
-
-.collection-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.close-collection {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.close-collection:hover {
-    transform: rotate(90deg);
-}
-
-.collection-title {
-    font-size: 3rem;
-    font-weight: 300;
-    letter-spacing: 2px;
-}
-
-.collection-description {
-    max-width: 800px;
-    margin: 0 auto 50px;
-    text-align: center;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: rgba(255,255,255,0.7);
-}
-
-.collection-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
-}
-
-.collection-item {
-    position: relative;
-    overflow: hidden;
-    height: 500px;
-    cursor: pointer;
-}
-
-.collection-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.collection-item:hover img {
-    transform: scale(1.05);
-}
-
-.item-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-    padding: 20px;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-}
-
-.collection-item:hover .item-overlay {
-    transform: translateY(0);
-}
-
-.item-title {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.item-price {
-    font-size: 1.2rem;
-    color: rgba(255,255,255,0.8);
-}
-
-.collection-cta {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.cta-button {
-    background: white;
-    color: black;
-    border: none;
-    padding: 15px 40px;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-    background: #f1f1f1;
-    transform: translateY(-3px);
-}
-
-@media (max-width: 768px) {
-    .collection-title {
-        font-size: 2rem;
-    }
-    
-    .collection-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .collection-item {
-        height: 400px;
-    }
-    
-    .item-overlay {
-        transform: translateY(0);
-    }
-}
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-stone-50 text-gray-900">
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 glass-effect border-b border-white/20">
+    <div class="loader">
+        <div class="container">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+    <div id="main" class="hidden">
+        <nav class="fixed top-0 w-full z-50 glass-effect border-b border-white/20 max-sm:bg-black/90">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <div class="font-display text-2xl font-bold text-white h-full"><img src="./images/logo.jpg" alt="logo" class="h-full" /></div>
+                <div class="font-display text-2xl font-bold text-white h-full shadow-[45px_-5px_40px_rgba(0,0,0,0.9),_-55px_-5px_10px_rgba(0,0,0,0.9)]"><img src="./images/logo.jpg" alt="logo" class="h-full" /></div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="text-white hover:text-stone-300 transition">Home</a>
                     <a href="#collections" class="text-white hover:text-stone-300 transition">Collections</a>
@@ -369,7 +124,7 @@ body {
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-stone-100">
+    <section id="about" class="py-20 bg-stone-100 max-sm:pb-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 
@@ -392,10 +147,10 @@ body {
                 </div>
             </div>
         </div>
-        <div id="atelier" class="py-20 bg-stone-100">
+        <div id="atelier" class="py-20 bg-stone-100 pb-0">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="grid grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ">
+                    <div class="grid grid-cols-2 gap-4 max-md:order-2 max-sm:grid-cols-1">
                         <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3"
                             alt="Atelier 1"
                             class="w-full h-64 object-cover">
@@ -403,7 +158,7 @@ body {
                             alt="Atelier 2"
                             class="w-full h-64 object-cover">
                     </div>
-                    <div>
+                    <div class="max-md:order-1">
                         <h2 class="font-display text-4xl md:text-5xl font-light mb-6">Our Atelier</h2>
                         <p class="text-gray-600 mb-6 leading-relaxed">
                             Nestled in the heart of Addis Ababa, our atelier is where dreams become reality. Each piece is meticulously crafted by master artisans who have inherited centuries-old techniques, combined with modern innovation.
@@ -482,7 +237,7 @@ body {
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-1 gap-12">
                     <!-- Shop Descriptions Container -->
-                    <div class="max-sm:space-y-8 grid grid-cols-1 lg:grid-cols-3">
+                    <div class="max-sm:space-y-8 grid grid-cols-1 md:grid-cols-3">
                         <div class="text-center">
                             <div class="text-4xl mb-4">🏛️</div>
                             <h3 class="font-display text-xl mb-2">22 Mazoriya</h3>
@@ -508,18 +263,21 @@ body {
                     <!-- Maps Container -->
                     <div class="space-y-1">
                         
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
-                            <div class="h-64 w-full">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-1 max-sm:gap-4">
+                            <div class="h-64 md:52 w-full">
+                                <h1 class="md:hidden h-[15%] w-full border-l border-r border-4 border-stone-300 text-center flex items-center justify-center">1<sup>st</sup> branch's Location</h1>
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.755036003319!2d38.76386031525978!3d8.99798099353838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85a5c1e4b6d5%3A0x3a3b811d6a9e5b5!2sBole%20Medhanealem%2C%20Addis%20Ababa!5e0!3m2!1sen!2set!4v1620000000000!5m2!1sen!2set" 
-                                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                    width="100%" height="85%" class="md:h-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                             </div>
-                            <div class="h-64 w-full">
+                            <div class="h-64 md:52 w-full">
+                                <h1 class="md:hidden h-[15%] w-full border-stone-300 border-l border-r border-4 text-center flex items-center justify-center">2<sup>nd</sup> branch's Location</h1>
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.755036003319!2d38.76386031525978!3d8.99798099353838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85a5c1e4b6d5%3A0x3a3b811d6a9e5b5!2sKazanches%20Plaza%2C%20Addis%20Ababa!5e0!3m2!1sen!2set!4v1620000000000!5m2!1sen!2set" 
-                                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                        width="100%" height="85%" class="md:h-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                             </div>
-                            <div class="h-64 w-full">
+                            <div class="h-64 md:52 w-full">
+                                <h1 class="md:hidden h-[15%] w-full border-stone-300 border-l border-r border-4 text-center flex items-center justify-center">3<sup>rd</sup> branch's Location</h1>
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.755036003319!2d38.76386031525978!3d8.99798099353838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85a5c1e4b6d5%3A0x3a3b811d6a9e5b5!2s4%20Kilo%20Commercial%20Center%2C%20Addis%20Ababa!5e0!3m2!1sen!2set!4v1620000000000!5m2!1sen!2set" 
-                                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                        width="100%" height="85%" class="md:h-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                             </div>
                         </div>
                     </div>
@@ -535,13 +293,13 @@ body {
                     </p>
                     <div class="space-y-4">
                         <div>
-                            <h3 class="font-medium mb-2">Global Headquarters</h3>
-                            <p class="text-stone-400">30 Avenue Montaigne, 75008 Addis Ababa, France</p>
+                            <h3 class="font-medium mb-2">Main Branch</h3>
+                            <p class="text-stone-400">22 Mazoriya, Addis Ababa, Ethiopia</p>
                         </div>
                         <div>
                             <h3 class="font-medium mb-2">Contact</h3>
-                            <p class="text-stone-400">+33 1 42 56 88 00</p>
-                            <p class="text-stone-400">contact@maisonelegance.com</p>
+                            <p class="text-stone-400">+251 9123 456 789</p>
+                            <p class="text-stone-400">contact@fertdesign.com</p>
                         </div>
                     </div>
                 </div>
@@ -573,13 +331,13 @@ body {
     <footer class="bg-black text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="font-display text-2xl mb-4 md:mb-0">Fert Design</div>
+                <div class="font-display text-2xl mb-4 md:mb-0 flex items-center"><img src="./images/logo.jpg" alt="logo" class="h-16"/>Fert Design</div>
                 <div class="flex space-x-6">
                     <a href="#" class="text-stone-400 hover:text-white transition">
                         <i class="fab fa-instagram text-xl"></i>
                     </a>
                     <a href="#" class="text-stone-400 hover:text-white transition">
-                        <i class="fab fa-twitter text-xl"></i>
+                        <i class="fab fa-x-twitter text-xl"></i>
                     </a>
                     <a href="#" class="text-stone-400 hover:text-white transition">
                         <i class="fab fa-facebook text-xl"></i>
@@ -589,8 +347,18 @@ body {
                     </a>
                 </div>
             </div>
-            <div class="text-center text-stone-400 mt-8 text-sm">
-                &copy; <span id="year"></span> Fert Design. All rights reserved.
+            <div class="text-stone-400 mt-8 text-sm flex justify-around items-center max-sm:flex-col max-sm:items-center max-sm:gap-3 max-sm:mb-7">
+                <div>
+                    &copy; <span id="year"></span> Fert Design. All rights reserved.
+                </div>
+                <div class="flex flex-col items-center">
+                    <p>
+                        Developed by: Talaksew Agegnehu
+                    </p>
+                    <p class="text-stone-300">
+                        Visit: <a href="https://www.talaksew.com" class="underline  hover:text-white">www.talaksew.com</a>
+                    </p>
+                </div>
             </div>
         </div>
     </footer>
@@ -634,221 +402,7 @@ body {
             </div>
         </div>
     </div>
-
-    <script>
-        // Mobile menu toggle
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
-
-        // Set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Collection data
-        const collections = {
-            woman: {
-                title: "Woman Collection",
-                description: "Our Woman collection celebrates femininity with flowing silhouettes, intricate embroidery, and luxurious fabrics. Each piece is designed to empower and inspire confidence.",
-                items: [
-                    { title: "Silk Evening Gown", price: "24,500 Br", image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-4.0.3" },
-                    { title: "Lace Cocktail Dress", price: "18,900 Br", image: "https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3" },
-                    { title: "Embroidered Jumpsuit", price: "22,300 Br", image: "https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3" },
-                    { title: "Velvet Wrap Dress", price: "20,700 Br", image: "https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3" },
-                    { title: "Chiffon Maxi Dress", price: "19,500 Br", image: "https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3" },
-                    { title: "Tulle Ball Gown", price: "27,800 Br", image: "https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3" }
-                ]
-            },
-            men: {
-                title: "Men Collection",
-                description: "The Men collection redefines modern masculinity with tailored precision, innovative fabrics, and subtle details that command attention. Sophistication meets contemporary edge.",
-                items: [
-                    { title: "Wool Suit", price: "32,500 Br", image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3" },
-                    { title: "Cashmere Overcoat", price: "28,900 Br", image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3" },
-                    { title: "Silk Dinner Jacket", price: "25,300 Br", image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3" },
-                    { title: "Linen Summer Suit", price: "22,700 Br", image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3" },
-                    { title: "Velvet Smoking Jacket", price: "29,500 Br", image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3" },
-                    { title: "Tweed Three-Piece", price: "35,800 Br", image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3" }
-                ]
-            },
-            couple: {
-                title: "Couple & Family Collection",
-                description: "Our Couple & Family collection offers coordinated elegance for special occasions. Harmonious designs that complement each other while celebrating individuality.",
-                items: [
-                    { title: "His & Hers Silk Set", price: "45,500 Br", image: "https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?ixlib=rb-4.0.3" },
-                    { title: "Family Formal Attire", price: "68,900 Br", image: "https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?ixlib=rb-4.0.3" },
-                    { title: "Wedding Party Set", price: "52,300 Br", image: "https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?ixlib=rb-4.0.3" },
-                    { title: "Anniversary Collection", price: "42,700 Br", image: "https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?ixlib=rb-4.0.3" },
-                    { title: "Parent & Child Formal", price: "39,500 Br", image: "https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?ixlib=rb-4.0.3" },
-                    { title: "Siblings Coordinated", price: "47,800 Br", image: "https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?ixlib=rb-4.0.3" }
-                ]
-            }
-        };
-
-        // Open collection function
-        function openCollection(collectionId) {
-            const collection = collections[collectionId];
-            const overlay = document.getElementById('collection-overlay');
-            const title = document.getElementById('collection-title');
-            const description = document.getElementById('collection-description');
-            const grid = document.getElementById('collection-grid');
-            
-            // Set collection info
-            title.textContent = collection.title;
-            description.textContent = collection.description;
-            
-            // Clear previous items
-            grid.innerHTML = '';
-            
-            // Add new items
-            collection.items.forEach(item => {
-                const itemElement = document.createElement('div');
-                itemElement.className = 'collection-item';
-                itemElement.innerHTML = `
-                    <img src="${item.image}" alt="${item.title}">
-                    <div class="item-overlay">
-                        <h3 class="font-display item-title">${item.title}</h3>
-                        <p class="item-price">${item.price}</p>
-                    </div>
-                `;
-                grid.appendChild(itemElement);
-                
-                // Add click handler for fullscreen
-                itemElement.addEventListener('click', function() {
-                    const fullscreenOverlay = document.getElementById('fullscreen-overlay');
-                    const fullscreenImage = document.getElementById('fullscreen-image');
-                    
-                    // Store current collection and index
-                    fullscreenOverlay.dataset.collectionId = collectionId;
-                    fullscreenOverlay.dataset.currentIndex = collection.items.indexOf(item);
-                    
-                    fullscreenImage.src = item.image;
-                    fullscreenImage.alt = item.title;
-                    
-                    fullscreenOverlay.style.display = 'block';
-                    setTimeout(() => {
-                        fullscreenOverlay.style.opacity = '1';
-                    }, 10);
-                    
-                    document.body.style.overflow = 'hidden';
-                });
-            });
-            
-            // Show overlay
-            overlay.style.display = 'block';
-            setTimeout(() => {
-                overlay.style.opacity = '1';
-            }, 10);
-            
-            // Disable scrolling on body
-            document.body.style.overflow = 'hidden';
-        }
-
-        // Navigation functions
-        function navigateImage(direction) {
-            const fullscreenOverlay = document.getElementById('fullscreen-overlay');
-            const collectionId = fullscreenOverlay.dataset.collectionId;
-            let currentIndex = parseInt(fullscreenOverlay.dataset.currentIndex);
-            const collection = collections[collectionId];
-            
-            if (direction === 'next') {
-                currentIndex = (currentIndex + 1) % collection.items.length;
-            } else {
-                currentIndex = (currentIndex - 1 + collection.items.length) % collection.items.length;
-            }
-            
-            const item = collection.items[currentIndex];
-            document.getElementById('fullscreen-image').src = item.image;
-            document.getElementById('fullscreen-image').alt = item.title;
-            fullscreenOverlay.dataset.currentIndex = currentIndex;
-        }
-
-        // Close fullscreen function
-        document.getElementById('close-fullscreen').addEventListener('click', function() {
-            const fullscreenOverlay = document.getElementById('fullscreen-overlay');
-            fullscreenOverlay.style.opacity = '0';
-            setTimeout(() => {
-                fullscreenOverlay.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }, 300);
-        });
-
-        // Navigation button handlers
-        document.getElementById('next-image').addEventListener('click', function() {
-            navigateImage('next');
-        });
-
-        document.getElementById('prev-image').addEventListener('click', function() {
-            navigateImage('prev');
-        });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            const fullscreenOverlay = document.getElementById('fullscreen-overlay');
-            if (fullscreenOverlay.style.display === 'block') {
-                if (e.key === 'ArrowRight') {
-                    navigateImage('next');
-                } else if (e.key === 'ArrowLeft') {
-                    navigateImage('prev');
-                } else if (e.key === 'Escape') {
-                    fullscreenOverlay.style.opacity = '0';
-                    setTimeout(() => {
-                        fullscreenOverlay.style.display = 'none';
-                        document.body.style.overflow = 'auto';
-                    }, 300);
-                }
-            }
-        });
-
-        // Close collection function
-        document.getElementById('close-collection').addEventListener('click', function() {
-            const overlay = document.getElementById('collection-overlay');
-            overlay.style.opacity = '0';
-            setTimeout(() => {
-                overlay.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }, 300);
-        });
-
-        
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-            // Close mobile menu if open
-            mobileMenu.classList.add('hidden');
-        }
-    });
-});
-
-// Navbar background on scroll
-window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    if (window.scrollY > 100) {
-        nav.classList.add('bg-black/90');
-    } else {
-        nav.classList.remove('bg-black/90');
-    }
-});
-
-//changing the video souce of a mobile screen
-function setVideoSrc() {
-    const videoSource = document.getElementById("video-source");
-    if (window.innerWidth <= 768) {
-        videoSource.src = "./videos/mobile _video.mp4";
-    } else {
-        videoSource.src = "./videos/fert1.mp4";
-    }
-    videoSource.parentElement.load();
-}
-
-setVideoSrc()
-window.addEventListener("resize", setVideoSrc);
-    </script>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
