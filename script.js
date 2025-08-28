@@ -15,8 +15,18 @@ document.getElementById('menu-toggle').addEventListener('click', function() {
 
 
 const mobileLinks = document.querySelectorAll("#mobile-menu a");
+const navbar = document.getElementById("navbar")
 mobileLinks.forEach(link => link.addEventListener("click", (e) => {
     document.getElementById('mobile-menu').classList.add('hidden');
+
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    
+    window.scrollTo({
+      top: target.offsetTop - (navbar.offsetHeight - 20),
+      behavior: 'smooth'
+    });
+    navbar.classList.add('small');
 }))
 
 
@@ -249,20 +259,20 @@ document.getElementById('close-collection').addEventListener('click', function()
 
     
 // Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-        target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-        // Close mobile menu if open
-        mobileMenu.classList.add('hidden');
-    }
-});
-});
+// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+// anchor.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     const target = document.querySelector(this.getAttribute('href'));
+//     if (target) {
+//         target.scrollIntoView({
+//             behavior: 'smooth',
+//             block: 'start'
+//         });
+//         // Close mobile menu if open
+//         // mobileMenu.classList.add('hidden');
+//     }
+// });
+// });
 
 // Navbar background on scroll
 window.addEventListener('scroll', () => {

@@ -21,7 +21,7 @@
         </div>
     </div>
     <div id="main" class="hidden">
-        <nav class="fixed top-0 w-full z-50 glass-effect border-b border-white/20 max-sm:bg-black/90">
+        <nav id="navbar" class="fixed top-0 w-full z-50 glass-effect border-b border-white/20 max-sm:bg-black/90">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="font-display text-2xl font-bold text-white h-full shadow-[45px_-5px_40px_rgba(0,0,0,0.9),_-55px_-5px_10px_rgba(0,0,0,0.9)]"><img src="./images/logo.jpg" alt="logo" class="h-full" /></div>
@@ -124,7 +124,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 max-sm:py-9 bg-stone-100 max-sm:pb-0">
+    <section id="about" class="py-20 max-sm:py-11 bg-stone-100 max-sm:pb-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 
@@ -157,6 +157,12 @@
                         <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3"
                             alt="Atelier 2"
                             class="w-full h-64 object-cover">
+                        <!-- <img src="images/atelier/Studio.jfif"
+                            alt="Atelier 1"
+                            class="w-full h-64 object-cover">
+                        <img src="images/atelier/Inside.jfif"
+                            alt="Atelier 2"
+                            class="w-full h-64 object-cover"> -->
                     </div>
                     <div class="max-md:order-1">
                         <h2 class="font-display text-4xl md:text-5xl font-light mb-6">Our Atelier</h2>
@@ -371,11 +377,11 @@
         <button id="close-fullscreen" class="close-fullscreen">
             <i class="fas fa-times"></i>
         </button>
-        <button id="prev-image" class="nav-button left-8">
+        <button id="prev-image" class="nav-button left-8 z-50">
             <i class="fas fa-chevron-left"></i>
         </button>
         <img id="fullscreen-image" class="fullscreen-image" src="" alt="Fullscreen View">
-        <button id="next-image" class="nav-button right-8">
+        <button id="next-image" class="nav-button right-8 z-50">
             <i class="fas fa-chevron-right"></i>
         </button>
     </div>
