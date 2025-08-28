@@ -93,10 +93,10 @@ const collections = {
             { title: "Modern Couple's Set", price: "48,300 Br", image: ["images/couple-and-family/f5.jpg", "images/couple-and-family/f5a.jpg", "images/couple-and-family/f5b.jpg", "images/couple-and-family/f5c.jpg", "images/couple-and-family/f5d.jpg", "images/couple-and-family/f5e.jpg", "images/couple-and-family/f5f.jpg"] },
             { title: "Classic Family Attire", price: "63,400 Br", image: ["images/couple-and-family/f6.jpg", "images/couple-and-family/f6a.jpg", "images/couple-and-family/f6b.jpg"] },
             { title: "Luxury Couple's Silk", price: "57,600 Br", image: ["images/couple-and-family/f7.jpg", "images/couple-and-family/f7a.jpg"] },
-            { title: "Formal Family Gathering Set", price: "81,200 Br", image: ["images/couple-and-family/f8.jpg", "images/couple-and-family/f8a.jpg", "images/couple-and-family/f8b.jpg"] },
+            { title: "Formal Family Gathering Set", price: "81,200 Br", image: ["images/couple-and-family/f8a.jpg", "images/couple-and-family/f8.jpg", "images/couple-and-family/f8b.jpg"] },
             { title: "His & Hers Evening Wear", price: "49,900 Br", image: ["images/couple-and-family/f9.jpg", "images/couple-and-family/f9a.jpg", "images/couple-and-family/f9b.jpg", "images/couple-and-family/f9c.jpg", "images/couple-and-family/f9d.jpg", "images/couple-and-family/f9e.jpg"] },
             { title: "Grand Family Occasion Outfit", price: "76,500 Br", image: ["images/couple-and-family/f10.jpg"] },
-            { title: "Couple's Traditional Silk", price: "54,700 Br", image: ["images/couple-and-family/f11.jpg", "images/couple-and-family/f11a.jpg"] },
+            { title: "Couple's Traditional Silk", price: "54,700 Br", image: ["images/couple-and-family/f11.jpg", "images/couple-and-family/f11a.jpg", "images/couple-and-family/f11b.jpg", "images/couple-and-family/f11c.jpg"] },
             { title: "Family Celebration Set", price: "69,800 Br", image: ["images/couple-and-family/f12.jpg", "images/couple-and-family/f12a.jpg", "images/couple-and-family/f12b.jpg"] },
             { title: "Elegant Pair Formal Wear", price: "51,200 Br", image: ["images/couple-and-family/f13.jpg", "images/couple-and-family/f13a.jpg"] },
             { title: "Complete Family Ensemble", price: "83,400 Br", image: ["images/couple-and-family/f14.jpg", "images/couple-and-family/f14a.jpg", "images/couple-and-family/f14b.jpg", "images/couple-and-family/f14c.jpg"] },
@@ -150,7 +150,7 @@ function openCollection(collectionId) {
             fullscreenOverlay.dataset.collectionId = collectionId;
             // const itemIndex = collection.items.indexOf(item);
  
-            fullscreenOverlay.dataset.currentIndex = item.image[0];
+            fullscreenOverlay.dataset.currentIndex = 0;
             fullscreenOverlay.dataset.imagesLength = item.image.length;
 
             // console.log(collection.items.indexOf(item))
@@ -183,6 +183,7 @@ function navigateImage(direction) {
     const fullscreenOverlay = document.getElementById('fullscreen-overlay');
     const collectionId = fullscreenOverlay.dataset.collectionId;
     let currentIndex = parseInt(fullscreenOverlay.dataset.currentIndex);
+    
     // const currentItem  = fullscreenOverlay.dataset.currentItem;
     const imagesLength = parseInt(fullscreenOverlay.dataset.imagesLength);
     const itemIndex = fullscreenOverlay.dataset.itemIndex;
@@ -192,10 +193,9 @@ function navigateImage(direction) {
     } else {
         currentIndex = (currentIndex - 1 + imagesLength) % imagesLength;
     }
-    // console.log()
+
     const item = collections[collectionId].items[itemIndex].image;
-    console.log(currentIndex)
-    document.getElementById('fullscreen-image').src = item.image;
+    document.getElementById('fullscreen-image').src = item[currentIndex];
     document.getElementById('fullscreen-image').alt = item.title;
     fullscreenOverlay.dataset.currentIndex = currentIndex;
 }
